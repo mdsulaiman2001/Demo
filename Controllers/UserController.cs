@@ -57,14 +57,14 @@ namespace SwordLMS.Web.Controllers
         {
             var roles = _context.Role.ToList();
             ViewBag.roles = _context.Role.ToList();
-            return RedirectToAction ("AdminController / AdminPage");
-        }
-
-        public IActionResult OnGetAsync()
-        {
             return View();
         }
-        
+
+        //public IActionResult AdminPage()
+        //{
+        //    return View();
+
+        //}
         public async Task<IActionResult> SaveSignUp (User user)
         {
             //if (!ModelState.IsValid)
@@ -77,12 +77,12 @@ namespace SwordLMS.Web.Controllers
             return RedirectToAction("Login");
         }
 
-        //public async Task<IActionResult> SaveLogin()
-        //{
-        //    //await _context.SaveChangesAsync();
-        //    return RedirectToAction("AdminPage","AdminController");
-        //    //return RedirectToRoute("AdminController")
-        //}
+        public async Task<IActionResult> SaveLogin()
+        {
+            await _context.SaveChangesAsync();
+            return RedirectToAction("AdminPage");
+            //return RedirectToRoute("AdminPage" , "AdminController"); 
+        }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
