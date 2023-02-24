@@ -1,0 +1,22 @@
+﻿
+
+@{
+    ViewData["Title"] = "TypeOfUser";
+}
+
+<h1>Select Type Of User</h1>
+<div class="col-md-4">
+        <form asp-controller="Users" asp-action="Typeofuser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </form>
+ <div class="form-group">
+
+            <label for="">User Type</label>
+            <select name="TypeOfUser" id="mm-25">
+                <option value="Admin">Admin</option>
+                <option value="Author">Author</option>
+                <option value="Student">Student</option>
+                <span class="text-dark"></span>
+            </select>
+            </div>
+       
